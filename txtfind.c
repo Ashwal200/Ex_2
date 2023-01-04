@@ -6,39 +6,38 @@
 #define LINE 256
 #define LINES 250
 
-int get_word(char w[])
+int get_word(char word[])
 {
     for (int i = 0; i < WORD; i++)
     {
-        w[i] = (char) 0;
+        word[i] = (char) 0;
     }
 
-    int count = 0;
-   
+    int counter = 0;
     for (int i = 0; i < WORD; i++)
     {
-        if(scanf("%c", &w[i])<1){
+        if(scanf("%c", & word[i])<1){
             break;
         }
         else{
-            if (w[i] == '\n' || w[i] == '\t' || w[i] == ' '||w[i]=='\r')
+            if (word[i] == '\n' || word[i] == '\t' || word[i] == ' '||word[i]=='\r')
             {
-                w[i] = '\0';
+                word[i] = '\0';
                 break;
             }
             else
             {
-                count++;
+                counter++;
             }
         }
     }
     
-   return count;
+   return counter;
 }
 int get_line(char s[])
 {
     int length = 0;
-    char ch;
+    char ch = ' ';// " "
     while ((ch != '\n') && (ch != EOF) && length != LINE && (ch != '\r'))
     {
         scanf("%c" , &s[length]);
