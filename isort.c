@@ -6,18 +6,10 @@
 
 
 void print(int arr[]){
-    for (int i = 0; i < SIZE; i++)
+    printf("%d" , arr[0]);
+    for (int i = 1; i < SIZE; i++)
     {
-        if (i == 0)
-        {
-            printf("%d" , arr[0]);
-        }
         printf(",%d" , arr[i]);
-        if (i==24)
-        {
-            printf("\n");
-        }
-        
     }
     printf("\n");
 }
