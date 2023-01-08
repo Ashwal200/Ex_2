@@ -8,18 +8,21 @@
 
 int get_word(char word[])
 {
+    // To define all the word in the word char.
     for (int i = 0; i < WORD; i++)
     {
         word[i] = (char) 0;
     }
-
     int counter = 0;
+    // Add char by char to the word.
     for (int i = 0; i < WORD; i++)
     {
+        // Break if the char is invalid.
         if(scanf("%c", & word[i])<1){
             break;
         }
         else{
+            // If the word end break.
             if (word[i] == '\n' || word[i] == '\t' || word[i] == ' '||word[i]=='\r')
             {
                 word[i] = '\0';
@@ -140,7 +143,7 @@ int main()
     char check[WORD];
     get_word(check);
  
-    char user_input[WORD];
+    char user_input[LINE];
     get_line(user_input);
 
 
