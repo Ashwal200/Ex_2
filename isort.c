@@ -11,6 +11,7 @@ void print(int arr[]){
     {
         printf(",%d" , arr[i]);
     }
+    printf("\n");
 }
 
 // Shift right number of index's.
