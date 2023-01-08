@@ -8,11 +8,6 @@
 
 int get_word(char word[])
 {
-    // To define all the word in the word char.
-    for (int i = 0; i < WORD; i++)
-    {
-        word[i] = (char) 0;
-    }
     int counter = 0;
     // Add char by char to the word.
     for (int i = 0; i < WORD; i++)
@@ -58,7 +53,7 @@ int get_line(char s[])
 int substring(char *line, char *str)
 {
     char *ptr = line;
-
+    // Check if the word substring.
     if (strstr(ptr , str) != NULL)
     {
         return 1;
@@ -104,8 +99,9 @@ void print_lines(char * str){
         }
 
         
+     }
 }
-}
+// If there is a word that similar to the word to check, print it.
 void print_similar_words(char *str)
 {
     char line[LINE];
@@ -136,7 +132,7 @@ void print_similar_words(char *str)
                 ptr_line = strtok(NULL, " ");
                 }
         }
-}
+    }
 }
 
 int main()
