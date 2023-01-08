@@ -4,7 +4,7 @@
 #define SIZE 50
 
 
-
+// Print the array in order.
 void print(int arr[]){
     printf("%d" , arr[0]);
     for (int i = 1; i < SIZE; i++)
@@ -14,14 +14,14 @@ void print(int arr[]){
     printf("\n");
 }
 
-
+// Shift right number of index's.
 void shift_element(int* arr, int i){
     for (int k = i ; k > 0; k--)
         {   
             *(arr+k) = *(arr +k-1);
         } 
 }
-
+// Sorting the array with insertion.
 void insertion_sort(int* arr , int len){
     int* ptr = arr;
     for (int j = 1; j < len; j++)
@@ -44,7 +44,7 @@ void insertion_sort(int* arr , int len){
 
 
 int main(){
-
+    // Getting the number of the array to sort.
     int arr[SIZE];
     for (int i = 0; i < SIZE; i++)
     {
