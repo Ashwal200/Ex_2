@@ -37,13 +37,15 @@ int get_word(char word[])
     
    return counter;
 }
+
 int get_line(char s[])
 {
     int length = 0;
-    char ch = ' ';// " "
+    char ch = ' ';
+    //Scan the user input into s[].
     while ((ch != '\n') && (ch != EOF) && length != LINE && (ch != '\r'))
     {
-        scanf("%c" , &s[length]);
+        scanf("%c", &s[length]);
         ch = s[length];
         length++;
 
@@ -52,6 +54,7 @@ int get_line(char s[])
     return length;
 }
 
+//Check if the word is a substring of the line.
 int substring(char *line, char *str)
 {
     char *ptr = line;
@@ -64,6 +67,7 @@ int substring(char *line, char *str)
     return 0;
 }
 
+//Check if one word is similar to the other (only for 0 or 1 changes).
 int similar(char *str1, char *str2)
 {
     int len1 = strlen(str1);
@@ -73,20 +77,19 @@ int similar(char *str1, char *str2)
         return 0;
     }
     int i = 0, j = 0, different = 0;
-    while( different < 2)//the number of different char is small then 2.
+    while( different < 2)//The number of different char is smaller then 2.
     {
-        //    aevia         avi
-        if( *(str1+i) == *(str2+j)) { i++, j++; } // check the next char in bout str.
+           
+        if( *(str1+i) == *(str2+j)) { i++, j++; } // Check the next char in bout str.
         else { different++, i++; } // check the next char in str1.
         if(j == len2+1 && ( i == len1+1) ) { return 1; } // finish of bout str.
     }
     return 0;
 }
-
+//If the word is in the line -> print the line.
 void print_lines(char * str){
 
     char line[LINE] = {0};
-    
     for (int i = 0; i < LINES ; i++)
     {
         get_line(line);
@@ -139,10 +142,11 @@ void print_similar_words(char *str)
 int main()
 {
   
-
+    //Get the word to check.
     char check[WORD];
     get_word(check);
  
+    //Get the user decision (a or b).
     char user_input[LINE];
     get_line(user_input);
 
